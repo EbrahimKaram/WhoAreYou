@@ -220,16 +220,16 @@ static Path *path_flag_iterator(char **tokenptr)
     (*tokenptr) += 1;
     switch (flag)
     {
-      case 'x':
-        return &x_path;
-      case 'y':
-        return &y_path;
-      case 'z':
-        return &z_path;
-      case 'a':
-        return &a_path;
-      default:
-        return NULL;
+    case 'x':
+      return &x_path;
+    case 'y':
+      return &y_path;
+    case 'z':
+      return &z_path;
+    case 'a':
+      return &a_path;
+    default:
+      return NULL;
     }
   }
 }
@@ -387,7 +387,7 @@ static void parse_input_message(int argc, char *argv[])
         color[2] = blue;
       }
 
-      setColor(color);
+      SetColor(color);
     }
   }
 }
@@ -500,21 +500,25 @@ static void changeColor(unsigned long interval)
     int green[3] = {0, 255, 0};
     int blue[3] = {0, 0, 255};
     // this should only change when coloring is set
-    if (start) {
-      if (distance < 10)
+    if (start)
+    {
+      if (distance < 30)
       {
-        setColor(red);
+        SetColorVariable(red);
+
+        // setColor(red);
       }
-      else if ((distance > 10) && (distance < 20))
+      else if ((distance > 30) && (distance < 60))
       {
-        setColor(blue);
+        // setColor(blue);
+        SetColorVariable(blue);
       }
       else
       {
-        setColor(green);
+        // setColor(green);
+        SetColorVariable(green);
       }
     }
-
   }
 }
 static void toggleDevice()
@@ -681,7 +685,7 @@ void loop(void)
     {
 
       //Please note that color is a globl variable
-      setColor(color);
+      SetColor(color);
       strobe = true;
     }
   }
@@ -708,7 +712,7 @@ void loop(void)
 }
 
 //RGB color setter
-void setColor(int rgb[])
+void SetColor(int rgb[])
 {
   const uint8_t RGB_Pins[3] = {RED_LIGHT, GREEN_LIGHT, BLUE_LIGHT};
 
@@ -719,9 +723,17 @@ void setColor(int rgb[])
     {
       analogWrite(RGB_Pins[i], rgb[i]);
 
-  // TODO: don't know iff
-//      color[i] = rgb[i];
+      // TODO: don't know iff
+      //      color[i] = rgb[i];
     }
+  }
+}
+
+void SetColorVariable(int colorToSet[])
+{
+  for (int i = 0; i < 3; i++)
+  {
+    color[i] = colorToSet[i];
   }
 }
 /****************************************************************/

@@ -2,5 +2,5 @@
     "port": "COM7",
     "board": "arduino:avr:uno",
     "programmer": "arduino:avrisp",
-    "sketch": "StepperWinch_Bob_Phase.ino"
+    "sketch": "StepperWinch_Bob_Phase_RGB_2Ultrasound.ino"
 }
