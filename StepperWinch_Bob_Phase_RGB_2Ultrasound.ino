@@ -449,7 +449,7 @@ static void sensePresence(unsigned long interval)
     // Calculating the distance
     distance = duration * 0.034 / 2; // Speed of sound wave divided by 2 (go and back)
     // Displays the distance on the Serial Monitor
-    if ((!start) && (distance < 30))
+    if ((!start) && (distance < 60))
     {
       start = true;
       wait_for_interations = WAIT_ITERATIONS;
@@ -463,9 +463,12 @@ static void sensePresence(unsigned long interval)
         wait_for_interations = WAIT_ITERATIONS;
       }
     }
-    Serial.print("Distance: ");
-    Serial.print(distance);
-    Serial.println(" cm");
+    if (Serial)
+    {
+      Serial.print("Distance: ");
+      Serial.print(distance);
+      Serial.println(" cm");
+    }
   }
 }
 
@@ -493,31 +496,34 @@ static void changeColor(unsigned long interval)
     newPulseDurationAvailable = false;
     unsigned long pulseDuration = pulseInTimeEnd - pulseInTimeBegin;
     distance = pulseDuration * 0.034 / 2;
-    Serial.print("Color Senor Read: ");
-    Serial.print(distance);
-    Serial.println(" cm");
+    if (Serial)
+    {
+      Serial.print("Color Senor Read: ");
+      Serial.print(distance);
+      Serial.println(" cm");
+    }
     int red[3] = {255, 0, 0};
     int green[3] = {0, 255, 0};
     int blue[3] = {0, 0, 255};
     // this should only change when coloring is set
     if (start)
     {
-      if (distance < 30)
+      if (distance < 60)
       {
         SetColorVariable(red);
 
-        // setColor(red);
+//        setColor(red);
       }
-      else if ((distance > 30) && (distance < 60))
+      else if (distance > 60)
       {
-        // setColor(blue);
+//        setColor(blue);
         SetColorVariable(blue);
       }
-      else
-      {
-        // setColor(green);
-        SetColorVariable(green);
-      }
+//      else
+//      {
+////        setColor(green);
+//        SetColorVariable(green);
+//      }
     }
   }
 }
@@ -663,9 +669,13 @@ void loop(void)
   unsigned long interval = now - last_event_loop;
   last_event_loop = now;
 
-  serial_input_poll();
+  // We shouldn't read from Serial if serial is not even connected
+  if (Serial)
+  {
+    serial_input_poll();
+    status_poll(interval);
+  }
 
-  status_poll(interval);
   path_poll(interval);
   sensePresence(interval);
   toggleDevice();
