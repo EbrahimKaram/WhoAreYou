@@ -419,7 +419,7 @@ static void status_poll(unsigned long interval)
 #define ECHO_PRESENCE A4 //SDA
 #define TRIG_PRESENCE A5 // SCL
 static bool start = false;
-#define WAIT_ITERATIONS 6
+#define WAIT_ITERATIONS 10
 static void sensePresence(unsigned long interval)
 {
   static long timer = 0;
@@ -508,13 +508,13 @@ static void changeColor(unsigned long interval)
     // this should only change when coloring is set
     if (start)
     {
-      if (distance < 60)
+      if (distance < 70)
       {
         SetColorVariable(red);
 
 //        setColor(red);
       }
-      else if (distance > 60)
+      else if (distance > 70)
       {
 //        setColor(blue);
         SetColorVariable(blue);
