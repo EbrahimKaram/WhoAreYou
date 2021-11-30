@@ -1,6 +1,24 @@
-##Saturday November 13,2021
+# Who are you? _An Artistic Piece_
+This was the code used to drive the heart of our piece. The project was part of the robotics for Creative Pratice course at Carnegie mellon. 
+
+The code was built on top of the StepperWinch Program developed by Garth Zeglin. 
+That code can be found in the link below
+https://courses.ideate.cmu.edu/16-376/s2020/ref/text/software/StepperWinch.html
+
+In essence, this is a Zeotrope that starts and changes color based on the input of two different ultrasound sensors.
+
+You can find the youtube Videos showing the progressive build of the piece in the link below. 
+https://youtube.com/playlist?list=PLgK8ktcGDGs_JM1s6qz76z2ol__JUwTJW
+
+
+
+# Daily Logs
+Below are the faily notes taken into account as this project was developed. 
+
+
+## Saturday November 13,2021
 We want to modify the ultrasound sensor to use SPindle Direction and enable
-now we would also liek to have this not use a delay.
+now we would also like to have this not use a delay.
 
 https://roboticsbackend.com/arduino-pulsein-with-interrupts/
 
@@ -8,7 +26,7 @@ We need to measure the high end of the echo pin
 
 https://www.arduino.cc/en/Reference.PulseIn
 
-So for the arduino uno only pin 2 and 3 can have an interrupt attacehd to them
+So for the arduino uno only pin 2 and 3 can have an interrupt attached to them
 
 that is why we are using the y step
 
