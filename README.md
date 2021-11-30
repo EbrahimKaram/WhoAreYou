@@ -13,7 +13,7 @@ https://youtube.com/playlist?list=PLgK8ktcGDGs_JM1s6qz76z2ol__JUwTJW
 
 
 # Daily Logs
-Below are the faily notes taken into account as this project was developed. 
+Below are the daily notes taken into account as this project was developed. 
 
 
 ## Saturday November 13,2021
