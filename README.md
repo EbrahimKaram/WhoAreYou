@@ -11,9 +11,12 @@ You can find the youtube Videos showing the progressive build of the piece in th
 https://youtube.com/playlist?list=PLgK8ktcGDGs_JM1s6qz76z2ol__JUwTJW
 
 
+Final Video trailer
+https://youtu.be/fU3-fOXpoGg
+
 
 # Daily Logs
-Below are the faily notes taken into account as this project was developed. 
+Below are the daily notes taken into account as this project was developed. 
 
 
 ## Saturday November 13,2021
