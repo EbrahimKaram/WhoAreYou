@@ -652,7 +652,7 @@ bool strobe = false;
 #define STEPS_PER_REVOLUTION 200
 //the below is in microteps
 // then we have the number of frames per circle. which is 12. we divide 200/12= 16.666 microsteps
-#define THICKNESS_OF_FRAME 3
+#define THICKNESS_OF_FRAME 2
 
 //TODO: need to add a color setter in the serial read would allow for some fun settings
 
