@@ -14,6 +14,10 @@ https://youtube.com/playlist?list=PLgK8ktcGDGs_JM1s6qz76z2ol__JUwTJW
 Final Video trailer
 https://youtu.be/fU3-fOXpoGg
 
+The final Documentation on the Piece can be found in the link below
+https://courses.ideate.cmu.edu/16-375/f2021/work/2021/12/02/who-are-you/
+
+
 
 # Daily Logs
 Below are the daily notes taken into account as this project was developed. 
